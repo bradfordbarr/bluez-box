@@ -25,11 +25,13 @@ $ export BLUETOOTH_VENDOR_ID='0xXXXX'
 
 ## Getting Started
 
-To get started, do the default vagrant dance.
+To get started, do the the following. The `vagrant reload` command is required
+to load a new kernel.
 
 ```sh
 $ vagrant up
 $ vagrant provision
+$ vagrant reload
 $ vagrant ssh
 ```
 

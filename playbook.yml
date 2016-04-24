@@ -76,6 +76,12 @@
     apt:
       name: git
       state: latest
+  - name: install a recent kernel
+    become: yes
+    apt:
+      name: linux-generic
+      state: latest
+      update_cache: yes
   - name: add lp group to system
     become: yes
     group:
