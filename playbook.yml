@@ -1,0 +1,82 @@
+---
+- hosts: all
+  tasks:
+  - name: ensure gcc is installed
+    become: yes
+    apt:
+      name: build-essential
+      state: latest
+  - name: ensure autotools is installed
+    become: yes
+    apt:
+      name: autotools-dev
+      state: latest
+  - name: ensure automake is installed
+    become: yes
+    apt:
+      name: automake
+      state: latest
+  - name: ensure libtool is installed
+    become: yes
+    apt:
+      name: libtool
+      state: latest
+  - name: ensure pkg-config is installed
+    become: yes
+    apt:
+      name: pkg-config
+      state: latest
+  - name: ensure glib is installed
+    become: yes
+    apt:
+      name: libglib2.0-dev
+      state: latest
+  - name: ensure dbus is installed
+    become: yes
+    apt:
+      name: libdbus-1-dev
+      state: latest
+  - name: ensure elfutils is installed
+    become: yes
+    apt:
+      name: elfutils
+      state: latest
+  - name: ensure libdw is installed
+    become: yes
+    apt:
+      name: libdw-dev
+      state: latest
+  - name: ensure udev is installed
+    become: yes
+    apt:
+      name: libudev-dev
+      state: latest
+  - name: ensure ical is installed
+    become: yes
+    apt:
+      name: libical-dev
+      state: latest
+  - name: ensure readline is installed
+    become: yes
+    apt:
+      name: libreadline-dev
+      state: latest
+  - name: ensure sbc is installed
+    become: yes
+    apt:
+      name: libsbc-dev
+      state: latest
+  - name: ensure speexdsp is installed
+    become: yes
+    apt:
+      name: libspeexdsp-dev
+      state: latest
+  - name: ensure git is installed
+    become: yes
+    apt:
+      name: git
+      state: latest
+  - name: get bluez source from git
+    git:
+      repo: git://git.kernel.org/pub/scm/bluetooth/bluez.git
+      dest: bluez
