@@ -76,11 +76,17 @@
     apt:
       name: git
       state: latest
-  - name: ensure libusb is installed
+  - name: add lp group to system
     become: yes
-    apt:
-      name: libusb-dev
-      state: latest
+    group:
+      name: lp
+      state: present
+  - name: add current user to lp group
+    become: yes
+    user:
+      name: "{{ansible_user_id}}"
+      append: yes
+      groups: lp
   - name: get bluez source from git
     git:
       repo: git://git.kernel.org/pub/scm/bluetooth/bluez.git
