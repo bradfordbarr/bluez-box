@@ -76,6 +76,11 @@
     apt:
       name: git
       state: latest
+  - name: ensure libusb is installed
+    become: yes
+    apt:
+      name: libusb-dev
+      state: latest
   - name: get bluez source from git
     git:
       repo: git://git.kernel.org/pub/scm/bluetooth/bluez.git
