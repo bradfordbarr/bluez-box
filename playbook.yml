@@ -97,3 +97,8 @@
     git:
       repo: git://git.kernel.org/pub/scm/bluetooth/bluez.git
       dest: bluez
+  - name: get bluetooth-next source from git
+    git:
+      repo: git://git.kernel.org/pub/scm/linux/kernel/git/bluetooth/bluetooth-next.git
+      depth: 50
+      dest: bluetooth-next

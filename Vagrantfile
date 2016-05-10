@@ -32,6 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--usb", "on"]
     vb.customize ["usbfilter", "add", "0", "--target", :id, "--name", "bluetooth", "--vendorid", BLUETOOTH_VENDOR_ID, "--productid", BLUETOOTH_PRODUCT_ID]
-
+    vb.memory = 1024
   end
+
 end
