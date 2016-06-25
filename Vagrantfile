@@ -21,6 +21,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # See https://github.com/mitchellh/vagrant/issues/5005
   config.ssh.insert_key = false
 
+  # Forward my ssh agent for easy GitHub development
+  config.ssh.forward_agent = true
+
   # Load some provisioning scripts
   config.vm.provision "ansible" do |ansible|
     ansible.verbose = "v"
